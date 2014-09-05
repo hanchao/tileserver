@@ -1,10 +1,21 @@
 {
     "name": "TileServer",
+	"version": "0.0.1",
+	"description": "TileServer Base tilelive",
     "main": "main.js",
+    "author": {
+        "name": "hanchao",
+        "email": "hanchao0123@hotmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hanchao/TileServer.git"
+    },
     "dependencies": {
         "tiletype": "0.1.x",
         "sqlite3": "~2.2.0",
         "sphericalmercator": "~1.0.1",
-		"mbtiles": "~0.2.9"
+		"mbtiles": "~0.2.9",
+		"express": "~4.2.0"
     }
 }

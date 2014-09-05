@@ -10,7 +10,7 @@ var btTiles = new MBTiles(bmtilesFile, function(err, mbtiles) {
                 if (err) throw err;
 				console.log(mbtiles);
 				
-				btTiles.getTile(0, 0, 10, function(err, tile, headers) {
+				btTiles.getTile(0, 0, 0, function(err, tile, headers) {
 				 			                if (err) throw err;
 											console.log(tile);
 											console.log(headers);
