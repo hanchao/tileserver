@@ -1,0 +1,10 @@
+{
+    "name": "TileServer",
+    "main": "main.js",
+    "dependencies": {
+        "tiletype": "0.1.x",
+        "sqlite3": "~2.2.0",
+        "sphericalmercator": "~1.0.1",
+		"mbtiles": "~0.2.9"
+    }
+}
