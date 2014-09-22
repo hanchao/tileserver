@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
+"use strict";
+
 require('sqlite3').verbose();
 var express = require('express');
+var path = require("path");
 var tilelive = require('tilelive');
 
 require('mbtiles').registerProtocols(tilelive);
@@ -16,13 +19,21 @@ var app = express();
 
 var filepath = process.argv[2];
 
+console.log('load %s', filepath);
+
 if (!filepath) {
-   console.warn('usage: ./tileserver.js <tilelive URI> <port>');
-   console.warn('example: ./tileserver.js mbtiles://./data/mbtiles/maptest_30c930.mbtiles 3000');
+   console.warn('usage: ');
+   console.warn('  ./tileserver.js <tilelive URI> <port>');
+   console.warn('example: ');
+   console.warn('  ./tileserver.js mbtiles://./data/mbtiles/maptest_30c930.mbtiles 3000');
+   console.warn('  ./tileserver.js file://./data/file/readonly 3000');
+   console.warn('  ./tileserver.js mapnik://./data/mapnik/world.xml 3000');
    process.exit(1);
 }
 
 var port = process.argv[3] || 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 tilelive.load(filepath, function(err, source) {
 	if (err) {
@@ -30,13 +41,13 @@ tilelive.load(filepath, function(err, source) {
 		throw err;
 	}
 	
-	console.log("load %s succeed", filepath);
+	console.log('load %s succeed', filepath);
 	var server = app.listen(port, function() {
 		console.log('Listening on port %d', server.address().port);
 	});
 	
 	app.get('/', function(req, res){
-	  res.send('<a href="/index.json">/index.json</a> <br /> <a href="/0/0/0">/{z}/{x}/{y}</a>');
+	  res.send('<a href="/index.json">/index.json</a><br /><a href="/preview.html">/preview.html</a>');
 	});
 
 	app.get('/index.json', function(req, res){
@@ -51,7 +62,7 @@ tilelive.load(filepath, function(err, source) {
 	        y = req.params.y | 0,
 			format = req.params.format;
 		
-		console.log("get tile, z = %d, x = %d, y = %d", z, x, y);
+		console.log('get tile, z = %d, x = %d, y = %d', z, x, y);
 	
 		source.getTile(z, x, y, function(err, tile, headers) {
 			if (err) {
