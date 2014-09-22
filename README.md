@@ -37,7 +37,7 @@ To install dependencies and build the source files:
 	* file
 
 	```./tileserver.js file://./data/file/readonly 3000```
-P
+
 	* mapnik
 
 	```./tileserver.js mapnik://./data/mapnik/world.xml 3000```
