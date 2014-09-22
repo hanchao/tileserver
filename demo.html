@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>demo</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = new L.Map('map');     
+		L.tileLayer('http://localhost:3000/{z}/{x}/{y}', {
+		    attribution: 'tileserver maptest',
+		    maxZoom: 3
+		}).addTo(map);   
+
+        map.setView(new L.LatLng(0, 0), 1);
+    </script>
+</body>
+</html>
