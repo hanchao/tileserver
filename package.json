@@ -2,7 +2,7 @@
     "name": "TileServer",
 	"version": "0.0.1",
 	"description": "TileServer Base tilelive",
-    "main": "main.js",
+    "main": "tileserver.js",
     "author": {
         "name": "hanchao",
         "email": "hanchao0123@hotmail.com"
@@ -17,5 +17,8 @@
         "sphericalmercator": "~1.0.1",
 		"mbtiles": "~0.2.9",
 		"express": "~4.2.0"
-    }
+    },
+	"scripts": {
+	    "start": "./tileserver.js ./data/maptest_30c930.mbtiles 3000"
+	}
 }

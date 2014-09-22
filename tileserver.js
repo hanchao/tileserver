@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 require('sqlite3').verbose();
 var express = require('express');
@@ -5,22 +6,26 @@ var mbtiles = require('mbtiles');
 
 var app = express();
 
-var bmtilesFile = "/Users/chaohan/Documents/maptest_30c930.mbtiles";
-var curmbtiles = new mbtiles(bmtilesFile, function(err, mbtiles) {
+var filepath = process.argv[2] || "./data/maptest_30c930.mbtiles";
+var port = process.argv[3] || 3000;
+
+var source = new mbtiles(filepath, function(err, mbtiles) {
 	if (err) throw err;
-		console.log("open file %s succeed", bmtilesFile);
+		console.log("open file %s succeed", filepath);
 		
-		var server = app.listen(3000, function() {
+		var server = app.listen(port, function() {
 		    console.log('Listening on port %d', server.address().port);
 		});
 });
 
 app.get('/', function(req, res){
-  res.send('index');
+  res.send('/index.json /{z}/{x}/{y}');
 });
 
-app.get('/hello.txt', function(req, res){
-	res.send('Hello World');
+app.get('/index.json', function(req, res){
+	source.getInfo(function(err, info) {
+		res.send(info);
+	});
 });
 
 app.get('/:z(\\d+)/:x(\\d+)/:y(\\d+)', function(req, res){
@@ -30,7 +35,7 @@ app.get('/:z(\\d+)/:x(\\d+)/:y(\\d+)', function(req, res){
 		
 	console.log("get tile, z = %d, x = %d, y = %d", z, x, y);
 	
-	curmbtiles.getTile(z, x, y, function(err, tile, headers) {
+	source.getTile(z, x, y, function(err, tile, headers) {
 		if (err) {
 			res.status(404)
 				res.send(err.message);
