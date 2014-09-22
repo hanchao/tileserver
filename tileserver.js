@@ -3,11 +3,13 @@
 require('sqlite3').verbose();
 var express = require('express');
 var tilelive = require('tilelive');
-require('tilelive-file').registerProtocols(tilelive);
+
 require('mbtiles').registerProtocols(tilelive);
+require('tilelive-file').registerProtocols(tilelive);
 require('tilelive-mapnik').registerProtocols(tilelive);
 require('tilelive-overlay').registerProtocols(tilelive);
 require('tilejson').registerProtocols(tilelive);
+require('tilelive-bridge').registerProtocols(tilelive);
 require('tilelive-vector').registerProtocols(tilelive);
 
 var app = express();
@@ -34,7 +36,7 @@ tilelive.load(filepath, function(err, source) {
 	});
 	
 	app.get('/', function(req, res){
-	  res.send('<a href="/index.json">/index.json</a> <br /> <a href="/{z}/{x}/{y}">/0/0/0</a>');
+	  res.send('<a href="/index.json">/index.json</a> <br /> <a href="/0/0/0">/{z}/{x}/{y}</a>');
 	});
 
 	app.get('/index.json', function(req, res){
@@ -43,10 +45,11 @@ tilelive.load(filepath, function(err, source) {
 		});
 	});
 
-	app.get('/:z(\\d+)/:x(\\d+)/:y(\\d+).:format([\\w\\.]+)', function(req, res){
+	app.get('/:z(\\d+)/:x(\\d+)/:y(\\d+).:format([\\w\\.]+)?', function(req, res){
 	    var z = req.params.z | 0,
 	        x = req.params.x | 0,
-	        y = req.params.y | 0;
+	        y = req.params.y | 0,
+			format = req.params.format;
 		
 		console.log("get tile, z = %d, x = %d, y = %d", z, x, y);
 	

@@ -1,10 +1,12 @@
 # TileServer
 
-TileServer base tilelive.
+A tilelive-based tile server.
 
 ## Features
 
-* serve [MBTiles](https://www.mapbox.com/developers/mbtiles/),file,[TileJSON](https://github.com/mapbox/tilejson-spec),[mapnik](http://mapnik.org/)
+* support raster and vector tile
+
+* serve [MBTiles](https://www.mapbox.com/developers/mbtiles/),file,[TileJSON](https://github.com/mapbox/tilejson-spec),[mapnik](http://mapnik.org/) and mapnik vector tiles
 
 
 ## Setup
@@ -34,7 +36,7 @@ To install dependencies and build the source files:
 
 	```./tileserver.js tilejson+file://./data/tilejson/world-bright.tilejson 3000```
 
-	* file
+  * file
 
 	```./tileserver.js file://./data/file/readonly 3000```
 
@@ -42,6 +44,10 @@ To install dependencies and build the source files:
 
 	```./tileserver.js mapnik://./data/mapnik/world.xml 3000```
 
+	* bridge(generating mapnik vector tiles)
+	
+	```./tileserver.js bridge:///Users/chaohan/Documents/Git/TileServer/data/bridge/test-a.xml 3000```
+	
 * Preview
 
   open ```demo.html```
