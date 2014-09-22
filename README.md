@@ -10,7 +10,7 @@ TileServer base tilelive.
 ## Setup
 
 [![Build Status](https://travis-ci.org/hanchao/TileServer.svg?branch=master)](https://travis-ci.org/hanchao/TileServer)
-* clone
+* Clone
 
 ```git clone https://github.com/hanchao/TileServer.git```
 
@@ -18,11 +18,11 @@ To install dependencies and build the source files:
 
 ```npm install```
 
-Usages
+* Usages
 
     ```./tileserver.js <tilelive URI> <port>```
 
-Example
+* Example
 
 	* mbtiles
 
@@ -37,12 +37,14 @@ Example
 	* file
 
 	```./tileserver.js file://./data/file/readonly 3000```
-
+P
 	* mapnik
 
 	```./tileserver.js mapnik://./data/mapnik/world.xml 3000```
 
-open ```demo.html```
+* Preview
+
+  open ```demo.html```
 
 ## License
 
