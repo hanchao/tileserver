@@ -4,10 +4,11 @@ TileServer base tilelive.
 
 ## Features
 
-* serve [MBTiles](https://www.mapbox.com/developers/mbtiles/) archive
+* serve [MBTiles](https://www.mapbox.com/developers/mbtiles/),tile file,[tilejson](https://github.com/mapbox/tilejson-spec),[mapnik](http://mapnik.org/)
 
 
 ## Setup
+
 [![Build Status](https://travis-ci.org/hanchao/TileServer.svg?branch=master)](https://travis-ci.org/hanchao/TileServer)
 * clone
 
@@ -17,15 +18,32 @@ To install dependencies and build the source files:
 
 ```npm install```
 
-Usage
+Usages
 
-    ./tileserver.js <filepath> <port>
-	
-To serve the debug page:
+    ```./tileserver.js <tilelive URI> <port>```
 
-```npm start```
+Example
 
-open demo.html 
+	* mbtiles
+
+	```./tileserver.js mbtiles://./data/mbtiles/maptest_30c930.mbtiles 3000```
+
+	* tilejson
+
+	```./tileserver.js tilejson+http://a.tiles.mapbox.com/v3/mapbox.world-bright.json 3000```
+
+	```./tileserver.js tilejson+file://./data/tilejson/world-bright.tilejson 3000```
+
+	* file
+
+	```./tileserver.js file://./data/file/readonly 3000```
+
+	* mapnik
+
+	```./tileserver.js mapnik://./data/mapnik/world.xml 3000```
+
+open ```demo.html```
 
 ## License
+
 TileServer is available under the [WTFPL](http://sam.zoy.org/wtfpl/)

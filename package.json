@@ -16,9 +16,14 @@
         "sqlite3": "~2.2.0",
         "sphericalmercator": "~1.0.1",
 		"mbtiles": "~0.2.9",
+	    "tilelive": "5.2.1",
+	    "tilelive-vector": "2.1.0",
+		"mapnik": "1.4.15",
+		"tilelive-mapnik": "^0.6.11",
+		"tilelive-overlay": "^0.0.10",
+		"tilejson": "^0.10.0",
+		"tilelive-vector": "^2.1.0",
+		"tilelive-file": "^0.0.3",
 		"express": "~4.2.0"
-    },
-	"scripts": {
-	    "start": "./tileserver.js ./data/maptest_30c930.mbtiles 3000"
-	}
+    }
 }
