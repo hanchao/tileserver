@@ -4,7 +4,7 @@ TileServer base tilelive.
 
 ## Features
 
-* serve [MBTiles](https://www.mapbox.com/developers/mbtiles/),tile file,[tilejson](https://github.com/mapbox/tilejson-spec),[mapnik](http://mapnik.org/)
+* serve [MBTiles](https://www.mapbox.com/developers/mbtiles/),file,[TileJSON](https://github.com/mapbox/tilejson-spec),[mapnik](http://mapnik.org/)
 
 
 ## Setup
