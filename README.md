@@ -28,4 +28,4 @@ To serve the debug page:
 open demo.html 
 
 ## License
-GPSLogger is available under the [WTFPL](http://sam.zoy.org/wtfpl/)
+TileServer is available under the [WTFPL](http://sam.zoy.org/wtfpl/)
