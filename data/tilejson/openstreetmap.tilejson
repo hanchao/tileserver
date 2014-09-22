@@ -1,0 +1,9 @@
+{
+    "name": "OpenStreetMap",
+    "scheme": "xyz",
+    "tiles": [ "http://a.tile.openstreetmap.org/{z}/{x}/{y}.png" ],
+    "minzoom": 0,
+    "maxzoom": 18,
+    "bounds": [ -180, -85, 180, 85 ],
+    "center": [ 0, 0, 2 ]
+}

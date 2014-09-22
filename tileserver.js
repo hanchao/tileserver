@@ -41,7 +41,6 @@ tilelive.load(filepath, function(err, source) {
 		throw err;
 	}
 	
-	console.log('load %s succeed', filepath);
 	var server = app.listen(port, function() {
 		console.log('Listening on port %d', server.address().port);
 	});
