@@ -36,7 +36,7 @@ To install dependencies and build the source files:
 
 	```./tileserver.js tilejson+file://./data/tilejson/world-bright.tilejson 3000```
 
-  * file
+	* file
 
 	```./tileserver.js file://./data/file/readonly 3000```
 
@@ -50,7 +50,7 @@ To install dependencies and build the source files:
 	
 * Preview
 
-  open ```demo.html```
+  open ```http://localhost:3000/```
 
 ## License
 
