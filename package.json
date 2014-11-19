@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"description": "A tilelive-based tile server",
     "main": "tileserver.js",
-    "bin": "tileserver",
     "author": {
         "name": "hanchao",
         "email": "hanchao0123@hotmail.com"
@@ -27,5 +26,8 @@
 		"tilelive-file": "^0.0.3",
         "locking-cache": "^0.2.0",
 		"express": "~4.2.0"
+    },
+    "bin": {
+        "tileserver": "./tileserver"
     }
 }

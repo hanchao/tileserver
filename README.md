@@ -12,6 +12,8 @@ A tilelive-based tile server.
 
 ## Setup
 
+[![NPM](https://nodei.co/npm/tileserver.png?downloads=true&downloadRank=true)](https://nodei.co/npm/tileserver/)
+
 [![Build Status](https://travis-ci.org/hanchao/TileServer.svg?branch=master)](https://travis-ci.org/hanchao/TileServer)
 * Clone
 
