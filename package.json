@@ -1,7 +1,7 @@
 {
-    "name": "TileServer",
+    "name": "tileserver",
 	"version": "0.0.1",
-	"description": "TileServer Base tilelive",
+	"description": "A tilelive-based tile server",
     "main": "tileserver.js",
     "author": {
         "name": "hanchao",

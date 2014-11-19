@@ -19,9 +19,27 @@
 <body>
     <div id="map"></div>
     <script>
-        var map = new L.Map('map');     
-		L.tileLayer('http://localhost:3000/{z}/{x}/{y}', {
-		    attribution: 'tileserver',
+        function getName() {
+            var match = location.search.match(/name=([^&\/]*)/);
+            var accessToken = match && match[1];
+
+            if (accessToken) {
+                localStorage.accessToken = accessToken;
+            } else {
+                accessToken = localStorage.accessToken;
+            }
+
+            return accessToken;
+        }
+
+        var map = new L.Map('map');
+
+        var name = getName();
+
+        var url = 'http://localhost:3000/' + name + '/{z}/{x}/{y}';
+
+		L.tileLayer(url, {
+		    attribution: name,
 		    maxZoom: 22
 		}).addTo(map);   
 
