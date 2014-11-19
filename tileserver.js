@@ -8,6 +8,7 @@ require('sqlite3').verbose();
 var express = require('express');
 var path = require("path");
 var tilelive = require('tilelive');
+var tilecache = require("./tilecache")(tilelive);
 
 require('mbtiles').registerProtocols(tilelive);
 require('tilelive-file').registerProtocols(tilelive);
@@ -37,20 +38,18 @@ var port = process.argv[3] || 3000;
 
 var sources = {};
 
-//for (var i=0; i<config.length; i++){
-//	loadSource(config[i]);
-//}
-
 startServer(port);
 
 function loadSource(name, callback){
-	tilelive.load(config[name].source, function(err, source) {
+
+	tilecache.load(config[name], function(err, source) {
 		if (err) {
 			console.error(err.message);
 			throw err;
 		}
 
 		callback(err, source);
+
 	});
 }
 

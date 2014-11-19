@@ -1,8 +1,9 @@
 {
     "name": "tileserver",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "A tilelive-based tile server",
     "main": "tileserver.js",
+    "bin": "tileserver",
     "author": {
         "name": "hanchao",
         "email": "hanchao0123@hotmail.com"
@@ -24,6 +25,7 @@
 	    "tilelive-bridge": "0.6.0",
 	    "tilelive-vector": "2.1.0",
 		"tilelive-file": "^0.0.3",
+        "locking-cache": "^0.2.0",
 		"express": "~4.2.0"
     }
 }

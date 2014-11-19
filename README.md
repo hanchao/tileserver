@@ -8,6 +8,7 @@ A tilelive-based tile server.
 
 * serve [MBTiles](https://www.mapbox.com/developers/mbtiles/),file,[TileJSON](https://github.com/mapbox/tilejson-spec),[mapnik](http://mapnik.org/) and mapnik vector tiles
 
+* memory cache
 
 ## Setup
 
@@ -22,31 +23,8 @@ To install dependencies and build the source files:
 
 * Usages
 
-    ```./tileserver.js <tilelive URI> <port>```
+	```./tileserver.js ./config.json 3000```
 
-* Example
-
-	* mbtiles
-
-	```./tileserver.js mbtiles://./data/mbtiles/maptest_30c930.mbtiles 3000```
-
-	* tilejson
-
-	```./tileserver.js tilejson+http://a.tiles.mapbox.com/v3/mapbox.world-bright.json 3000```
-
-	```./tileserver.js tilejson+file://./data/tilejson/world-bright.tilejson 3000```
-
-	* file
-
-	```./tileserver.js file://./data/file/readonly 3000```
-
-	* mapnik
-
-	```./tileserver.js mapnik://./data/mapnik/world.xml 3000```
-
-	* bridge(generating mapnik vector tiles)
-	
-	```./tileserver.js bridge:///Users/chaohan/Documents/Git/TileServer/data/bridge/test-a.xml 3000```
 	
 * Preview
 

@@ -1,13 +1,9 @@
 {
-  "maptest_30c930": {
-    "source": "mbtiles://./data/mbtiles/maptest_30c930.mbtiles"
-  },
-  "mapbox.world-bright":{
-    "source": "tilejson+http://a.tiles.mapbox.com/v3/mapbox.world-bright.json",
-    "cache": "memcached"
-  },
-  "world-bright":{
-    "source": "tilejson+file://./data/tilejson/world-bright.tilejson",
-    "cache": "redis"
-  }
+  "maptest_30c930" : "mbtiles://./data/mbtiles/maptest_30c930.mbtiles",
+  "mapbox.world-bright" : "tilejson+http://a.tiles.mapbox.com/v3/mapbox.world-bright.json",
+  "mapbox.mapbox-streets-v5" : "tilejson+http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v5.json?access_token=pk.eyJ1IjoiaGFuY2hhbyIsImEiOiI1RTIwNkkwIn0.ht9ldcZjv7VtmF41F7DhRg",
+  "world-bright" : "tilejson+file://./data/tilejson/world-bright.tilejson",
+  "readonly" : "file://./data/file/readonly",
+  "world" : "mapnik://./data/mapnik/world.xml",
+  "test-a" : "bridge:///Users/chaohan/Documents/Git/TileServer/data/bridge/test-a.xml"
 }
