@@ -28,7 +28,7 @@ if (!configfile) {
    console.warn('usage: ');
    console.warn('  ./tileserver.js <configfile> <port>');
    console.warn('example: ');
-   console.warn('  ./tileserver.js ./config 3000');
+   console.warn('  ./tileserver.js ./config.json 3000');
    process.exit(1);
 }
 
