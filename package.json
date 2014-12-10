@@ -34,7 +34,8 @@
         "mocha": "1.3.x"
     },
     "bin": {
-        "tileserver": "./tileserver"
+        "tileserver": "./tileserver",
+        "tilecopy": "./tilecopy"
     },
     "scripts": {
         "test": "mocha -R spec"
