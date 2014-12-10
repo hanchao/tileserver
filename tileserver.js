@@ -45,11 +45,8 @@ function loadSource(name, callback){
 	tilecache.load(config[name], function(err, source) {
 		if (err) {
 			console.error(err.message);
-			throw err;
 		}
-
 		callback(err, source);
-
 	});
 }
 
@@ -100,6 +97,11 @@ function startServer(port){
 		var name = req.params.name;
 		if (sources[name] === undefined){
 			loadSource(name,function(err, source){
+				if (err) {
+					res.status(404)
+					res.send(err.message);
+					return;
+				}
 				sources[name] = source;
 				getInfo(sources[name],res);
 			});
@@ -119,6 +121,11 @@ function startServer(port){
 
 		if (sources[name] === undefined){
 			loadSource(name,function(err, source){
+				if (err) {
+					res.status(404)
+					res.send(err.message);
+					return;
+				}
 				sources[name] = source;
 				getTile(sources[name],z,x,y,res);
 			});
