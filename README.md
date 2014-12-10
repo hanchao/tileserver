@@ -32,6 +32,10 @@ To install dependencies and build the source files:
 
   open ```http://localhost:3000/```
 
+* Tools
+
+    ```./tilecopy.js mbtiles://./data/mbtiles/maptest_30c930.mbtiles file://./out/```
+
 ## License
 
 TileServer is available under the [WTFPL](http://sam.zoy.org/wtfpl/)
