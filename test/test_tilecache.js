@@ -1,7 +1,7 @@
 var assert = require('assert');
 
 var tilelive = require('tilelive');
-var tilecache = require("../tilecache")(tilelive);
+var tilecache = require("tilelive-cache")(tilelive);
 
 require('mbtiles').registerProtocols(tilelive);
 require('tilelive-file').registerProtocols(tilelive);
@@ -30,4 +30,21 @@ describe('test cache', function() {
     });
 
 
+    it('test get exist tile', function(done) {
+        tilecache.load('mbtiles://./data/mbtiles/maptest_30c930.mbtiles', function(err, source) {
+			source.getTile(0, 0, 0, function(err, tile, headers) {
+				assert.ok(tile != undefined);
+            	done();
+			});
+        });
+    });
+	
+    it('test get no exist tile', function(done) {
+        tilecache.load('mbtiles://./data/mbtiles/maptest_30c930.mbtiles', function(err, source) {
+			source.getTile(18, 10, 10, function(err, tile, headers) {
+				assert.ok(tile == undefined);
+            	done();
+			});
+        });
+    });
 });

@@ -8,7 +8,7 @@ require('sqlite3').verbose();
 var express = require('express');
 var path = require("path");
 var tilelive = require('tilelive');
-var tilecache = require("./tilecache")(tilelive);
+var tilecache = require("tilelive-cache")(tilelive);
 
 require('mbtiles').registerProtocols(tilelive);
 require('tilelive-file').registerProtocols(tilelive);
