@@ -8,7 +8,7 @@ A tilelive-based tile server.
 
 * serve [MBTiles](https://www.mapbox.com/developers/mbtiles/),file,[TileJSON](https://github.com/mapbox/tilejson-spec),[mapnik](http://mapnik.org/) and mapnik vector tiles
 
-* memory cache
+* memory cache£¨£©
 
 ## Setup
 
@@ -35,6 +35,12 @@ To install dependencies and build the source files:
 * Tools
 
     ```./tilecopy.js mbtiles://./data/mbtiles/maptest_30c930.mbtiles file://./out/```
+
+## Credits
+
+This library contains code from several projects:
+
+- **tilelive-cache**: based on 0.2.4 (https://github.com/mojodna/tilelive-cache)
 
 ## License
 
