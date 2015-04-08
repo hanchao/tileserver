@@ -1,4 +1,4 @@
-# TileServer
+# tileserver
 
 A tilelive-based tile server.
 
@@ -14,10 +14,10 @@ A tilelive-based tile server.
 
 [![NPM](https://nodei.co/npm/tileserver.png?downloads=true&downloadRank=true)](https://nodei.co/npm/tileserver/)
 
-[![Build Status](https://travis-ci.org/hanchao/TileServer.svg?branch=master)](https://travis-ci.org/hanchao/TileServer)
+[![Build Status](https://travis-ci.org/hanchao/tileserver.svg?branch=master)](https://travis-ci.org/hanchao/tileserver)
 * Clone
 
-```git clone https://github.com/hanchao/TileServer.git```
+```git clone https://github.com/hanchao/tileserver.git```
 
 To install dependencies and build the source files:
 
@@ -38,4 +38,4 @@ To install dependencies and build the source files:
 
 ## License
 
-TileServer is available under the [WTFPL](http://sam.zoy.org/wtfpl/)
+tileserver is available under the [WTFPL](http://sam.zoy.org/wtfpl/)
