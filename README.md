@@ -40,7 +40,7 @@ To install dependencies and build the source files:
 
 This library contains code from several projects:
 
-- **tilelive-cache**: based on 0.2.4 (https://github.com/mojodna/tilelive-cache)
+- **tilelive-cache**: based on 0.4.4 (https://github.com/mojodna/tilelive-cache)
 
 ## License
 
